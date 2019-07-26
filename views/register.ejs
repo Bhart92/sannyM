@@ -1,0 +1,29 @@
+<% include ./partials/header %>
+
+
+<h1>sign up</h1>
+
+<form action="/register" method="POST"  class="ui form">
+  <div class="field">
+    <input type="text" name="username" placeholder="username" />
+    </div>
+    <div class="field">
+      <input type="password" name="password" placeholder="password" />
+      </div>
+      <div class="field">
+        <input type="text" name="image" placeholder="image url">
+      </div>
+      <div class="field">
+            <input type="email" name="email" placeholder="JohnDoe@email.com" />
+            </div>
+            <div class="field">
+              <textarea placeholder="Type a bit about yourself..." name="about" maxlength="500" required style="resize: none;"></textarea>
+              </div>
+            <div class="field">
+        <input type="text" name="adminCode" placeholder="admin code" />
+        </div>
+  <button>sign up</button>
+
+  </form>
+
+  <% include ./partials/footer %>

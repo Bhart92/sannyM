@@ -1,0 +1,14 @@
+<% include ./partials/header %>
+<h1>Reset your password</h1>
+  <div class="ui stackable grid container" id="passwordReset">
+    <form action="/forgot" method="POST" class="passwordForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Email asscoiated with account" autofocus />
+        </div>
+        <div class="form-group">
+        <input type="submit" value="Reset Password" class="ui basic button" />
+        </div>
+      </form>
+    </div>
+<% include ./partials/footer %>

@@ -1,0 +1,36 @@
+<% include ../partials/header.ejs %>
+<div class="ui container">
+  <div class="aboutBox">
+    <img src="<%= user.image %>" id="aboutPhoto" alt="Sanny Mao"/>
+      </div>
+      <div class="aboutBox">
+        <p>
+          <%= user.about %>
+        </p>
+        </div>
+      <% if(currentUser && currentUser.isAdmin){ %>
+        <a href="javascript:void(0);" id="editBtnAbout">edit about me</a>
+      <% } %>
+</div>
+<div class="ui modal editLink" id="projectLink" bis_skin_checked="1">
+  <div class="modalWrapper">
+    <div class="formContainer addNew">
+       <form action="/" method="POST" enctype="multipart/form-data" class="ui form newForm clearfix" id="newProjectForm">
+         <h2>add to gallery.</h2>
+           <div class="field">
+               <input type="text" name="project[title]" placeholder="Title" >
+           </div>
+           <div class="field">
+                <input type="file" id="image" name="image" accept="image/*">
+           </div>
+           <button class="ui basic button">Submit</button>
+    </form>
+    </div>
+    <div class="loader" id="loader-4">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+<% include ../partials/footer.ejs %>

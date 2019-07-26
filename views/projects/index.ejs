@@ -1,0 +1,27 @@
+<% include ../partials/header.ejs %>
+<h1>gallery</h1>
+<div class="ui container MainContainer">
+  <% if(currentUser && currentUser.isAdmin){ %>
+  <a href="javascript:void(0);" id="mobileNewLink">add new project</a>
+  <% } %>
+  <% projects.forEach(function(projects){ %>
+    <div class=" ui column">
+      <div class="loader indexTarget" id="loader-4">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="<%= projects.image %>" data-lightbox="image-1" class="imageGrayscale"><img data-src="<%= projects.image %>"></a>
+      <h2><%= projects.title.substring(0, 25) %></h2>
+      <% if(currentUser && currentUser.isAdmin){%>
+        <div class="ui buttons centered" style="width: 41%; margin: 0 auto; height: auto;">
+          <a href="/<%= projects._id %>/edit" class="ui basic button" id="indexEditBtn">Edit</a>
+          <form id="delete_form" action="/<%= projects._id %>?_method=DELETE" method="POST">
+            <button id="delete_btn" class="ui basic button" style="">Delete</button>
+          </form>
+        </div>
+      <% }%>
+    </div>
+  <% }); %>
+</div>
+<% include ../partials/footer.ejs %>

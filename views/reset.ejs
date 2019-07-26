@@ -1,0 +1,18 @@
+<% include ./partials/header %>
+<div style="width: 30%; margin: 25px auto; position: relative;">
+<form action="/reset/<%= token %>" method="POST" class="edit_new_form">
+  <div class="form-group">
+    <label for="password">New Password</label>
+    <input type="text" name="password" value="" placeholder="New Password" autofocus="autofocus" class="form-control" style="outline:none;" />
+    </div>
+    <div class="form-group">
+      <label for="confirm">Confirm Password</label>
+      <input type="text" name="confirm" value="" placeholder="Confirm Password" class="form-control" style="outline:none;"/>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="submit" class="ui basic button"/>
+        </div>
+  </form>
+  </div>
+
+  <% include ./partials/footer %>

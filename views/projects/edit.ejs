@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<h2>Edit <%= project.title %></h2>
+<div class="formContainer">
+   <form action="/<%= project._id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="ui form edit_form">
+       <div class="field">
+           <input type="text" name="title" value="<%= project.title %>" maxlength="25">
+       </div>
+       <div class="field">
+            <input type="file" id="image" name="image" accept="image/*">
+       </div>
+       <button class="ui basic button">Submit</button>
+       <div class="loader" id="loader-4">
+         <span></span>
+         <span></span>
+         <span></span>
+       </div>
+</form>
+<a href="/" class="goBack">Go Back</a>
+</div>
+
+<% include ../partials/footer %>

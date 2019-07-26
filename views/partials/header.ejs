@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sanny m.</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/css/app.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a0a3346e9b.js"></script>
+    <link href="/stylesheets/css/lightbox.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <% if(error && error.length > 0){ %>
+        <div class="ui negative message">
+          <div class="header">
+            <p style="font-family: 'Poiret One', cursive;">
+              <%= error %>
+
+            </p>
+          </div>
+        </div>
+      <% } %>
+      <% if(success && success.length > 0) { %>
+      <div class="ui positive message centered">
+        <div class="header">
+          <p style="font-family: 'Poiret One', cursive;">
+            <%= success %>
+          </p>
+        </div>
+      </div>
+      <% } %>
+      <h2 id="h2"><a href="/">sanny m.</a></h2>
+      <nav class="navBarTop">
+        <ul>
+          <% if(currentUser && currentUser.isAdmin){ %>
+            <li><a href="/">gallery
+              <div class="dropdown">
+                <div class="menu">
+                  <div class="item">
+                    <a href="javascript:void(0);" id="addNewLink">add to galley</a>
+                  </div>
+                </div>
+              </div>
+            </a></li>
+            <li><a href="/about" id="aboutLink">about
+              <div class="dropdown">
+                <div class="menu">
+                  <div class="item">
+                    <a href="javascript:void(0);" id="editAbout">edit about section</a>
+                  </div>
+                </div>
+              </div>
+            </a></li>
+          <% } else { %>
+            <li><a href="/">gallery</a></li>
+          <li><a href="/about">about</a></li>
+          <% } %>
+          <li><a href="/contact">contact</a></li>
+        </ul>
+      </nav>
+      </header>
+      <div class="ui modal login" bis_skin_checked="1">
+        <div class="modalWrapper">
+        <form action="/login" method="POST" id="loginForm">
+          <h3>Login</h3>
+          <input type="text" name="username" placeholder="Username" />
+          <input type="password" name="password" placeholder="Password" />
+          <input type="submit" value="Login" class="ui basic button" />
+        </form>
+        </div>
+      </div>
+      <% if(currentUser && currentUser.isAdmin){ %>
+      <a href="/logout" class="loggedState" id="loggedState">logout</a>
+        <% } %>

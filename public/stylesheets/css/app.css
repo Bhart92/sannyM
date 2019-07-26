@@ -1,0 +1,897 @@
+*{
+  font-family: 'Poiret One', cursive;
+  font-weight: 100;
+  box-sizing: content-box;
+}
+body{
+  background: #D0DDCC;
+  position: relative;
+  height: auto;
+  overflow-x: hidden;
+}
+/* HEADERS AND A tag config*/
+#h2{
+  width: 100%;
+  margin: 0 0 13rem 0;
+  padding-top: 15rem;
+}
+h2{
+  text-align: center;
+}
+h2 a{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 4.5rem;
+  text-decoration: none;
+  color: #070707;
+}
+h1{
+  margin-top: 0;
+  text-align: center;
+  color: #070707;
+  width: 100%;
+  font-size: 2.5rem;
+  font-family: 'Poiret One', cursive;
+}
+.column h2{
+  padding: 15px;
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.35rem;
+}
+header.ui.one{
+  height: auto;
+}
+a{
+  font-size: 1.25rem;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+a:link, a:visited{
+  color: #070707;
+}
+a:hover{
+  color: #1D1E1F;
+}
+/**/
+/* Clearfixes */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/**/
+/* NavBar */
+.navBarTop{
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.navBarTop ul{
+  padding: 0;
+ width: 100%;
+ margin: 0 auto;
+ height: 100%;
+}
+.navBarTop ul li{
+  width: 16%;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 400;
+  position: relative;
+}
+.navBarTop ul li a{
+  font-size: 1.35rem;
+  font-weight: 400;
+  padding: 5px;
+  margin: -6px;
+}
+.dropdown{
+  background: #D0DDCC;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  flex-direction: column;
+  z-index: 100;
+  opacity: 0;
+  border: .15px solid transparent;
+  box-shadow: -0.05px 0px 2px rgba(0, 0, 0, .5);
+  transform: translate(0, -100%);
+  transition: transform 1s ease-in-out, opacity .35s ease-in-out;
+}
+.dropdown .menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  flex-direction: column;
+  position: relative;
+}
+.dropdown .menu .item{
+  padding: 15px;
+  width: 100%;
+}
+hr{
+  width: 100%;
+  height: .05px;
+  position: absolute;
+  top: 30%;
+}
+.navBarTop ul li:hover .dropdown{
+  margin-top: 10px;
+  transform: translate(0, 0);
+  transition: all .5s ease-in-out;
+  opacity: 1;
+}
+/**/
+/*Project section Layout*/
+.column{
+  min-height: 250px;
+  flex-basis: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 0 15px 7rem 15px;
+}
+.MainContainer{
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  position: relative;
+}
+/**/
+/* Reusable Buttons and Links styling */
+.ui.buttons{
+  padding-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#editLink{
+  border-left: .5px solid #000;
+  display: flex;
+  align-items: center;
+}
+#deleteForm{
+  width: auto;
+}
+.ui.buttons .button:first-child{
+  border-radius: unset;
+  border-left: .5px solid #000;
+  margin-left: unset;
+  margin: 0;
+}
+#mobileNewLink{
+  display: none;
+  top: -12rem;
+  position: absolute;
+  right: 0;
+  left: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  padding-right: 6px;
+}
+.ui.buttons .button{
+  flex: unset;
+}
+.indexBtnContainer{
+  width: auto;
+  margin: 0 auto;
+}
+.indexBtnContainer #indexEditBtn{
+  display: table
+}
+.ui.inverted.primary.button, .ui.inverted.primary.buttons .button {
+    background-color: transparent;
+    -webkit-box-shadow: 0 0 0 2px #54c8ff inset!important;
+    box-shadow: 0 0 0 2px #54c8ff inset!important;
+    color: #070707;
+    float: right;
+}
+.ui.button.basic{
+  background-color: transparent;
+  border: .5px solid rgba(0,0,0,.5);
+  padding: 9px 25px;
+  display: block;
+  transition: all .35s ease-in-out;
+  outline: none;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  margin: 5rem auto 0 auto;
+  box-shadow: 0 4px #565656;
+  border-radius: 20px;
+  margin-top: 1.5rem;
+}
+.ui.button.basic.aboutEditBtn{
+  margin-top: 0;
+}
+.ui.button.basic:hover{
+  background: transparent!important;
+  color: #565656;
+  box-shadow: 0 2px #565656;
+
+}
+.ui.button.basic:active{
+  box-shadow: 0 0 #565656;
+}
+#delete_btn{
+  border-left: .5px solid #000;
+  display: block;
+  padding-top: 9px;
+  box-shadow: none!important;
+}
+.loggedState{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1rem;
+  overflow: hidden;
+}
+.button_container{
+  width: auto;
+  height: auto;
+  float: right;
+  display: flex;
+  align-items:flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.goBack{
+  display: inline;
+  float: right;
+  padding: 10px;
+  margin: -10px;
+  padding-top: 3rem;
+}
+#passwordReset{
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#passwordLink, #loggedState{
+  z-index:9;
+}
+#editBtnAbout{
+  display: none;
+  align-self: flex-end;
+  flex-direction: column;
+  position: absolute;
+  right: 5em;
+}
+/**/
+/* Image styling */
+.ui.column img{
+  margin: unset;
+  width: 100%;
+  min-height: 200px;
+  flex-grow: 1;
+  align-self: stretch;
+  max-height: 300px;
+  }
+ /**/
+/*About section*/
+.ui.container{
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  flex-direction: row;
+  min-height: 60vh;
+}
+.aboutBox{
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.aboutBox:last-of-type{
+  justify-content: center;
+  align-items: center;
+}
+.aboutBox:last-of-type p{
+  line-height: 200%;
+  font-size: 1.15rem;
+  text-align: justify;
+}
+.aboutBox img{
+  width: 75%;
+}
+/**/
+/* Form styling */
+.ui.form{
+  width: 75%;
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  z-index: 5;
+}
+.ui.form.contactForm{
+  width: 35%;
+}
+.form.edit_form{
+  width: 50%;
+}
+.formContainer.addNew{
+  width: 100%;
+}
+.formContainer.editAbout{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.modalWrapper.editAboutModal{
+  width: 100%;
+}
+.ui.form.editABoutForm{
+  width: 75%;
+  margin-top: 0;
+}
+.form .button{
+  background-color: transparent;
+  border: .5px solid rgba(0,0,0,.5);
+  padding: 15px 25px;
+  display: block;
+  transition: all .35s ease-in-out;
+  outline: none;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  margin: 5rem auto 0 auto;
+  box-shadow: 0 4px #565656;
+  border-radius: 20px;
+}
+.form .button:hover{
+  background-color: transparent;
+  box-shadow: 0 2px #565656;
+}
+.form .button:active{
+  background-color: transparent;
+  box-shadow: 0 0 #565656;
+}
+.form .button:focus{
+  background-color: transparent;
+}
+form{
+  background: transparent;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.formContainer{
+  width: 50%;
+  margin: 25px auto;
+  position: relative;
+}
+#loginForm{
+  width: 100%;
+  height: auto;
+}
+#delete_form{
+  width: unset;
+  height: unset;
+  display: unset;
+}
+.edit_new_form{
+  width: 100%;
+}
+.form-group{
+  width: 100%;
+}
+input[type="text"], input[type="file"]{
+  width: 100%;
+}
+.modalWrapper{
+  position: relative!important;
+}
+.ui.form .field>input, .ui.form textarea:not([rows]){
+  width: 100%;
+  outline: none;
+  background: #D0DDCC;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .25);
+  border-radius: unset;
+  margin-bottom: 20px;
+  padding: 0;
+  margin: 0 auto;
+}
+.ui.form .field{
+  margin-bottom: 25px;
+}
+.ui.form .aboutField{
+  margin-bottom: 0;
+}
+.ui.form .aboutField{
+  margin-bottom: 10px;
+}
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="file"]:focus,
+.ui.form textarea:not([rows]):focus{
+    background: transparent!important;
+    border-radius: unset!important;
+    border-color: rgba(0, 0, 0, .55)!important;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"]{
+  height: 30px;
+  width: 45%;
+  outline: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .25);
+  align-content: transparent;
+  margin: 0 auto;
+  display: block;
+  transform: scale(1);
+  margin-top: .75rem;
+  transition: transform .35s ease-in-out;
+}
+.ui.form .field.field input:-webkit-autofill{
+  background: #D0DDCC!important;
+  border-color: #070707!important;
+  box-shadow: none!important;
+}
+.ui.form .field.field input:-webkit-autofill:focus{
+  background: #D0DDCC!important;
+  border-color: #070707!important;
+  box-shadow: none!important;
+}
+.passwordForm{
+  width: auto;
+  height: 200px;
+  margin: 0 auto;
+  display: table;
+}
+/**/
+/* Modal styling*/
+#modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .85);
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 100;
+}
+.modals.dimmer .ui.scrolling.modal{
+  background: #D0DDCC;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.ui.modal {
+  width: 35%;
+  height: 35%;
+  background: #D0DDCC;
+  position: unset;
+}
+.modalWrapper{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ui.dimmer.modals.page.transition.visible.active{
+  padding: 0;
+  justify-content: center;
+}
+/**/
+/* Loader Icon Stlying */
+.ui.active.dimmer.loaderContainer{
+  background-color: transparent;
+  height: 50px;
+  bottom: 0!important;
+  top: unset!important;
+}
+.ui.dimmer .loader{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 4;
+}
+.ui.dimmer .ui.loader{
+  color: #070707;
+  font-size: 1.3rem;
+}
+.ui.dimmer .ui.loader:after{
+  border-color: #F4F7FC transparent transparent;
+}
+.ui.dimmer .ui.loader:before{
+  border-color: #565656;
+}
+.loader.indexTarget{
+  position: absolute;
+  top: 25%!important;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+#loader-4.indexTarget span{
+  visibility: visible;
+}
+.loader{
+  display: flex!important;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+#loader-4 span{
+  visibility: hidden;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #070707;
+  margin: 5px;
+  opacity: 0;
+}
+#loader-4 span:nth-child(1){
+  animation: opacitychange 1s ease-in-out infinite;
+}
+#loader-4 span:nth-child(2){
+  animation: opacitychange 1s ease-in-out 0.33s infinite;
+}
+#loader-4 span:nth-child(3){
+  animation: opacitychange 1s ease-in-out 0.66s infinite;
+}
+@keyframes opacitychange{
+  0%, 100%{
+    opacity: 0;
+  }
+
+  60%{
+    opacity: 1;
+  }
+}
+/**/
+/* Footer styling*/
+footer{
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+footer > a{
+  font-size: 1rem;
+}
+/* Pagination Styling */
+#paginationNav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+.pagination>.disabled>a{
+  background: transparent;
+  border: none;
+  transition: all .25s ease-in;
+}
+.pagination>.disabled>a:hover, .pagination>.active>a:hover{
+  background: rgba(0, 0, 0, 1);
+  color: #fff;
+}
+.pagination>.active>a
+/**/
+/*Error/Success message styling*/
+#errorUl{
+  list-style-type: none;
+}
+#errorUl li{
+  text-align: center;
+}
+#errorUl li:first-of-type{
+  font-size: 3rem;
+  padding-bottom: 20px;
+}
+#errorUl li a{
+  font-size: 2rem;
+  display: inline-block;
+}
+.ui.positive.message, .ui.negative.message{
+   background: transparent;
+   box-shadow: none;
+   font-family: 'Poiret One', cursive;
+   font-size: 1.5rem;
+ }
+.negative.message, .positive.message{
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 10;
+   margin: 0 auto;
+   text-align: center;
+ }
+ /**/
+/* Media Queries */
+@media only screen and (min-width: 1200px){
+  .ui.modal {
+    width: 35%;
+    height: 35%;
+  }
+}
+@media only screen and (width: 1024px) and (min-height: 1366px){
+  .ui.form.contactForm{
+    width: 50%!important;
+  }
+  .form.edit_form{
+    width: 75%;
+  }
+}
+@media only screen and (min-width: 992px){
+  .ui.modal {
+    width: 35%;
+    height: 40%;
+  }
+  .ui.modal.newLink, .ui.modal.editLink{
+    height: 75%;
+  }
+  .ui.form.contactForm{
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 767px){
+  .ui.modal {
+    width: 85%;
+    height: 75%;
+  }
+  #editBtnAbout{
+    display: flex;
+  }
+  input[type="text"], input[type="password"], input[type="file"], input[type="email"]{
+    width: 90%!important;
+    margin-bottom: 5px;
+    height: 25px!important;
+  }
+  .goBack{
+    margin-right: 10px;
+    font-size: 1.75rem;
+  }
+  #mobileNewLink{
+    display: inline;
+  }
+  footer > a{
+    font-size: 1.5rem;
+  }
+  .dropdown{
+    display: none;
+  }
+  #newProject{
+    position: unset;
+    font-size: 1.6rem;
+  }
+  .loggedState{
+    font-size: 1.3rem;
+    font-weight: 500!important;
+
+  }
+  #passwordLink{
+    font-size: 1.5rem;
+  }
+  .navBarTop ul li a{
+    font-size: 1.6rem;
+  }
+  .navBarTop ul li{
+    width: 25%;
+  }
+  .formContainer{
+    width: 100%;
+    margin-top: 0;
+  }
+  .ui.form{
+    width: 75%;
+    margin-top: 6rem;
+  }
+  textarea{
+    width: 90%!important;
+  }
+  #newProjectForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 0;
+  }
+  form .field{
+    width: 100%;
+    }
+}
+@media only screen and (max-width: 700px){
+  .ui.container{
+      flex-direction: column;
+      min-height: auto;
+    }
+  .aboutBox{
+      flex-basis: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+    }
+  .aboutBox:last-of-type{
+      justify-content: center;
+      align-items: center;
+    }
+  .aboutBox:last-of-type p{
+      width: 75%;
+      padding-top: 2rem;
+    }
+  .aboutBox img{
+      width: 75%;
+    }
+  #editBtnAbout{
+    padding-top: 3rem;
+    position: unset;
+    right: unset;
+  }
+  .ui.form.contactForm{
+    width: 75%;
+  }
+  .ui.form .field>input, .ui.form textarea:not([rows]){
+    width: 100%!important;
+  }
+}
+@media only screen and (width: 768px) and (min-height: 1024px){
+  .ui.column img {
+    height: 375px;
+    margin: 0 auto;
+  }
+  .ui.modal {
+    width: 50%;
+  }
+  .ui.buttons .button:first-child{
+    font-size: 1.5rem;
+  }
+  #passwordLink {
+    font-size: 2rem;
+  }
+  #mobileNewLink{
+    display: inline;
+  }
+  .navBarTop ul li a{
+    font-size: 1.75rem;
+  }
+  .column{
+    flex-basis: 75%;
+    align-items: stretch;
+  }
+  .column a{
+    display: flex;
+    align-items: stretch;
+    margin: 0;
+  }
+  .column h2{
+    font-size: 2rem;
+  }
+  .loggedState{
+    top: 0;
+  }
+  input[type="text"], input[type="password"], input[type="file"], input[type="email"], textarea{
+    width: 90%!important;
+    margin-bottom: 5px;
+    height: 25px!important;
+  }
+  .dropdown {
+    display: none;
+  }
+  .aboutBox{
+    flex-basis: 45%;
+  }
+  #aboutPhoto{
+    border-radius: 5px;
+    height: 50%;
+    align-self: center;
+    width: 100%;
+    }
+  .aboutBox:last-of-type p {
+      line-height: 150%;
+      font-size: 1.35rem;
+  }
+  footer > a {
+    font-size: 1.5rem;
+  }
+  .pagination>li:first-child>a, .pagination>li:last-child>a, .pagination>li>a{
+    font-size: 1.75rem;
+  }
+  .ui.button.basic {
+      font-size: 1.2rem;
+  }
+  .ui.button:focus{
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+       -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+            box-shadow: inset 0px 0px 5px #c1c1c1;
+     outline: none;
+   }
+   .ui.button:hover{
+     background-color: transparent;
+     box-shadow: 0 2px #565656;
+   }
+   .ui.button:active{
+     background-color: transparent;
+     box-shadow: 0 0 #565656;
+   }
+
+    .goBack {
+      font-size: 1.5rem;
+      padding-top: 10rem;
+    }
+    .ui.form{
+      margin-top: 6rem;
+      width: 85%;
+    }
+    .ui.form.contactForm{
+      width: 75%;
+    }
+  .ui.form .field>input, .ui.form textarea:not([rows]){
+        width: 100%!important;
+    }
+    input[type="text"], input[type="file"]{
+      height: 25px!important;
+    }
+    .ui.huge.image{
+      height: 375px!important;
+    }
+    .ui[class*="one column"].grid>.column:not(.row){
+      width: 85%;
+    }
+  }
+@media only screen and (max-width: 485px){
+  .aboutBox img {
+    height: 250px;
+    width: 90%;
+  }
+  .aboutBox:last-of-type p {
+    width: 90%;
+    font-size: 1.2rem;
+  }
+  #paginationNav{
+    margin-top: 5rem;
+  }
+  footer{
+    height: 200px;
+  }
+  #newProjectForm{
+    width: 95%;
+  }
+}
+/**/

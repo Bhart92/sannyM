@@ -1,0 +1,56 @@
+<div class="ui modal editLink" id="projectLink" bis_skin_checked="1">
+  <div class="modalWrapper">
+    <div class="formContainer addNew">
+      <form action="/" method="POST" enctype="multipart/form-data" class="ui form newForm clearfix" id="newProjectForm">
+        <h2>add to gallery.</h2>
+        <div class="field">
+          <input type="text" name="project[title]" placeholder="Title" >
+        </div>
+        <div class="field">
+          <input type="file" id="image" name="image" accept="image/*">
+        </div>
+        <button class="ui basic button">Submit</button>
+      </form>
+    </div>
+    <div class="loader" id="loader-4">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+<div class="ui modal editLink" id="editLinkAbout" bis_skin_checked="1">
+  <div class="modalWrapper editAboutModal">
+    <div class="formContainer editAbout">
+      <h1>edit about me.</h1>
+      <form action="/about/<%= user._id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="ui form editABoutForm">
+        <div class="field aboutField">
+          <input type="file" id="image" name="image" accept="image/*">
+        </div>
+        <div class="field aboutField">
+          <textarea name="about" maxlength="500" style="resize: none;"><%= user.about %></textarea>
+        </div>
+        <button class="ui basic button aboutEditBtn">Submit</button>
+       </form>
+      </div>
+    <div class="loader" id="loader-4">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+<footer>
+  <a href="/">sanny m. artwork</a>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/js/lightbox.js"></script>
+  <script src="/js/index.min.js"></script>
+  <script src="/js/keydrown.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/visibility.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/message.css"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/transition.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dimmer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/modal.js"></script>
+</body>
+</html>
